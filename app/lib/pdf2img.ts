@@ -11,7 +11,6 @@ export async function convertPdfToImage(
     if (typeof window === 'undefined' || !('document' in window)) {
       throw new Error('PDF conversion can only run in the browser.');
     }
-
     // It will Dynamically import pdfjs-dist only in browser
     const pdfjsLib = await import('pdfjs-dist');
     const pdfjsWorker = (await import('pdfjs-dist/build/pdf.worker.mjs?worker')).default;
